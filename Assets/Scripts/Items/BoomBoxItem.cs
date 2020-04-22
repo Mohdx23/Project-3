@@ -25,12 +25,13 @@ public class BoomBoxItem : InteractiveItem
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = music[0];
     }
-
+    //this code is used to get the music clips and add them into the boombox playlist ^
     public void PlayClip()
     {
         audioSource.clip = music[Songnumber];
         audioSource.Play();
         //TODO; this is where you might want to setup and ensure the desire clip is playing on the source
+        //this code plays a song from the list of songs enlisted into the playlist whenever the code is called.
     }
 
     void Update()
@@ -41,7 +42,7 @@ public class BoomBoxItem : InteractiveItem
 
             if (Songnumber > music.Length - 1)
                 Songnumber = 0;
-
+            //This is used to go through the different songs when left clicking, it is used so whenever the left click is pressed, the next song plays.
             PlayClip();
         }
     }
@@ -62,6 +63,7 @@ public class BoomBoxItem : InteractiveItem
         Songnumber = 0;
         isUsed = false;
         }
+        //this code is used to see if the onUse event is called and if it is then a song will be played like i explained above.
         
     }
         //TODO; this where we need to go to next track and start and stop playing
